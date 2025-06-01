@@ -1,0 +1,100 @@
+timestamp,entity,metric,root_cause_node,node_type,original_timestamp
+3600,metric.platform.bjclpdb01,每秒执行数,Execution,Execution,1609199581
+10800,metric.platform.bjclpdb02,enq: TX - row lock contention,Row Lock Contention,Row Lock Contention,1612746962
+18000,metric.platform.by11ccpdadb1001,log file switch completion,LogFile,LogFile,1602763201
+25200,metric.platform.by11ccpdadb1002,log file sync,LogFile,LogFile,1602763201
+32400,metric.platform.by11ccpdedb1001,log file sync,LogFile,LogFile,1604108520
+39600,metric.platform.by11ccpdedb1002,log file sync,LogFile,LogFile,1604108581
+46800,metric.platform.by11ccsbfdb1001,log file sync,LogFile,LogFile,1597621921
+54000,metric.platform.by11ccsbfdb1001,log file sync,LogFile,LogFile,1597727221
+61200,metric.platform.by11ccsbfdb1001,db file sequential read;log file sync,DBFile;LogFile,DBFile;LogFile,1607782501
+68400,metric.platform.by11ccsbfdb1001,db file sequential read;log file sync,DBFile;LogFile,DBFile;LogFile,1611813661
+75600,metric.platform.by11ccsbmdb1002,log file sync,LogFile,LogFile,1607405700
+82800,metric.platform.by11ccsbpdb1001,db file parallel write;log file sync,DBFile;LogFile,DBFile;LogFile,1608276601
+90000,metric.platform.by11ccscedb1001,log file sync,LogFile,LogFile,1576378980
+97200,metric.platform.by11ccscmdb1001,log file sync,LogFile,LogFile,1607995441
+104400,metric.platform.by11ccscmdb1001,enq: TX - index contention,Index Contention,Index Contention,1608853680
+111600,metric.platform.by11ccscmdb1001,enq: TX - index contention,Index Contention,Index Contention,1613615041
+118800,metric.platform.by11cvmd1db1002,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1612502161
+126000,metric.platform.by11cvmd1db1002,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1612675141
+133200,metric.platform.by11cvmd1db1002,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1612761661
+140400,metric.platform.by11cvmd1db1002,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1612848181
+147600,metric.platform.by11cvmd1db1002,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1612934762
+154800,metric.platform.by11cvmd1db1002,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1613021281
+162000,metric.platform.by11cvmd2db1001,log file sync;db file parallel write,LogFile;DBFile,LogFile;DBFile,1612761361
+169200,metric.platform.by11cvmd3db1001,log file sync,LogFile,LogFile,1612760581
+176400,metric.platform.by11cvmd4db1001,db file sequential read;log file sync,DBFile;LogFile,DBFile;LogFile,1608276600
+183600,metric.platform.by11cvmd5db1001,db file sequential read;log file sync,DBFile;LogFile,DBFile;LogFile,1608276601
+190800,metric.platform.by11cvmd6db1001,db file sequential read;log file sync,DBFile;LogFile,DBFile;LogFile,1608276601
+198000,metric.platform.by11cvmljdb1001,enq: TX - row lock contention,Row Lock Contention,Row Lock Contention,1606983121
+205200,metric.platform.by11cvmljdb1002,enq: TX - row lock contention,Row Lock Contention,Row Lock Contention,1606983181
+212400,metric.platform.by11khqc1db1002,enq: TX - index contention,Index Contention,Index Contention,1576321560
+219600,metric.platform.by12p2alddb1001,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1612761120
+226800,metric.platform.by12ygqggdb1001,enq: TM - contention,Contention,Contention,1608711961
+234000,metric.platform.by12ygqggdb1001,enq: TM - contention,Contention,Contention,1609662360
+241200,metric.platform.by16armdadb1001,UpAvailabelMemPct,Memory,Memory,1606443484
+248400,metric.platform.by16armdadb1001,UpAvailabelMemPct,Memory,Memory,1610676724
+255600,metric.platform.by18afgdbdb1001,现有连接数量;每秒登录数,Execution;Execution,Execution;Execution,1606709342
+262800,metric.platform.by18afgdbdb1001,每秒执行数,Execution,Execution,1607755561
+270000,metric.platform.by18afgdbdb1001,现有连接数量;每秒登录数;enq: TM - contention,Execution;Execution;Contention,Execution;Execution;Contention,1608873181
+277200,metric.platform.by18afgdbdb1001,现有连接数量;每秒登录数,Execution;Execution,Execution;Execution,1608902221
+284400,metric.platform.by18afgdbdb1001,现有连接数量;每秒登录数,Execution;Execution,Execution;Execution,1610687820
+291600,metric.platform.by18afgdbdb1001,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1611185760
+298800,metric.platform.by18afgdbdb1001,enq: TM - contention,Contention,Contention,1611895081
+306000,metric.platform.by18aggd1db1001,enq: TM - contention,Contention,Contention,1607750881
+313200,metric.platform.by18aggd1db1001,enq: TM - contention,Contention,Contention,1608002161
+320400,metric.platform.by18aggd1db1001,enq: TM - contention,Contention,Contention,1611896821
+327600,metric.platform.by18cimd1db1001,control file parallel write,ASM Control File,ASM Control File,1611919682
+334800,metric.platform.by18cimd2db1001,每分失败解析,Parse,Parse,1602828485
+342000,metric.platform.by18cisb2db1001,每秒登录数,Execution,Execution,1606470902
+349200,metric.platform.by18cisb4db1001,每秒登录数,Execution,Execution,1606471562
+356400,metric.platform.by18cmxcndb1001,每秒执行数;每秒登录数,Execution;Execution,Execution;Execution,1606291201
+363600,metric.platform.by18cmxcndb1001,每秒执行数;每秒登录数,Execution;Execution,Execution;Execution,1613721601
+370800,metric.platform.by18cmxgzdb1001,log_file_sync平均等待时间,LogFile,LogFile,1606470361
+378000,metric.platform.by18cmxgzdb1001,log file sync,LogFile,LogFile,1612863960
+385200,metric.platform.by18crpcmdb1002,log file sync,LogFile,LogFile,1612749601
+392400,metric.platform.by18dpsladb1002,library cache lock,CacheLock,CacheLock,1610262000
+399600,metric.platform.by18dpsladb1002,library cache lock,CacheLock,CacheLock,1612940400
+406800,metric.platform.by18dsftydb1002,enq: TM - contention,Contention,Contention,1607739961
+414000,metric.platform.by18elbmadb1001,log file sync,LogFile,LogFile,1605953820
+421200,metric.platform.by18elbmadb1001,log file sync,LogFile,LogFile,1608276541
+428400,metric.platform.by18elbmbdb1001,enq: TX - index contention,Index Contention,Index Contention,1577852340
+435600,metric.platform.by18elbmbdb1001,log file sync,LogFile,LogFile,1605952441
+442800,metric.platform.by18elppddb1001,gc buffer busy release,Global Cache Buffer Busy,Global Cache Buffer Busy,1608276601
+450000,metric.platform.by18hfslpdb1001,gc buffer busy release,Global Cache Buffer Busy,Global Cache Buffer Busy,1608030360
+457200,metric.platform.by18lmpdbdb1002,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1606732983
+464400,metric.platform.by18pardbdb1001,log file sync,LogFile,LogFile,1575956160
+471600,metric.platform.by18pardbdb1001,log file sync,LogFile,LogFile,1576388100
+478800,metric.platform.by18pardbdb1001,log file sync,LogFile,LogFile,1612762620
+486000,metric.platform.by18plsp2db1001,log file sync,LogFile,LogFile,1597621922
+493200,metric.platform.by18qdfm4db1002,现有连接数量,Execution,Execution,1605694203
+500400,metric.platform.by18qdfm4db1002,现有连接数量,Execution,Execution,1605866342
+507600,metric.platform.by18qdfm4db1002,现有连接数量,Execution,Execution,1607687222
+514800,metric.platform.by18qdfm6db1002,现有连接数量,Execution,Execution,1601719324
+522000,metric.platform.by18qdfm6db1002,现有连接数量,Execution,Execution,1605694201
+529200,metric.platform.by18qdfm6db1002,现有连接数量,Execution,Execution,1612693202
+536400,metric.platform.by18qyxljdb1001,enq: TX - index contention,Index Contention,Index Contention,1576195140
+543600,metric.platform.by18qyxljdb1001,gc buffer busy acquire,Global Cache Buffer Busy,Global Cache Buffer Busy,1597621921
+550800,metric.platform.by18rcco6db1001,enq: TX - index contention,Index Contention,Index Contention,1597329600
+558000,metric.platform.by18rcco6db1002,gc current multi block request,Global Cache Block,Global Cache Block,1597329601
+565200,metric.platform.by18rccp1db1001,enq: TX - index contention;现有连接数量,Index Contention;Execution,Index Contention;Execution,1613265421
+572400,metric.platform.by18rccp3db1001,db file sequential read;log file sync,DBFile;LogFile,DBFile;LogFile,1610095681
+579600,metric.platform.by18rccp5db1002,每秒登录数;db file parallel read;db file sequential read,Execution;DBFile;DBFile,Execution;DBFile;DBFile,1613178421
+586800,metric.platform.by18rccp7db1001,enq: TX - index contention,Index Contention,Index Contention,1607909280
+594000,metric.platform.by18rccp7db1002,现有连接数量;enq: TX - index contention;log file sync,Execution;Index Contention;LogFile,Execution;Index Contention;LogFile,1609903981
+601200,metric.platform.by18rccp7db1002,db file parallel read;db file sequential read;db file scattered read,DBFile;DBFile;DBFile,DBFile;DBFile;DBFile,1613351280
+608400,metric.platform.by18sddl1db1001,log file sync,LogFile,LogFile,1597621921
+615600,metric.platform.by18sddljdb1001,db file sequential read;log file sync,DBFile;LogFile,DBFile;LogFile,1597621921
+622800,metric.platform.wn10jsorcdb1001,现有连接数量,Execution,Execution,1608089342
+630000,metric.platform.wn10jsorcdb1001,现有连接数量,Execution,Execution,1610279223
+637200,metric.platform.wn11poslpdb1001,Disk file operations I/O,Disk,Disk,1607772964
+644400,metric.platform.wn11poslpdb1001,Disk file operations I/O,Disk,Disk,1610686384
+651600,metric.platform.wn19ndipzdb1001,enq: HW - contention;enq: TX - row lock contention,Contention;Row Lock Contention,Contention;Row Lock Contention,1607760660
+658800,metric.platform.wn19ndipzdb1001,gc buffer busy release;log file sync,Global Cache Buffer Busy;LogFile,Global Cache Buffer Busy;LogFile,1613376662
+666000,metric.platform.wn19ndipzdb1001,enq: HW - contention;log file sync,Contention;LogFile,Contention;LogFile,1613549460
+673200,metric.platform.wn1anerysdb1001,每秒执行数,Execution,Execution,1606458001
+680400,metric.platform.wn1anerysdb1002,每秒执行数,Execution,Execution,1608131220
+687600,metric.platform.wn1anerysdb1002,enq: UL - contention,Contention,Contention,1609507200
+694800,metric.platform.wn1anerysdb1002,每秒执行数,Execution,Execution,1613485201
+702000,metric.platform.wn1ckcdgldb1001,enq: TX - row lock contention,Row Lock Contention,Row Lock Contention,1612944122
+709200,metric.platform.wn1ohriljdb1001,enq: TX - row lock contention,Row Lock Contention,Row Lock Contention,1608867601
