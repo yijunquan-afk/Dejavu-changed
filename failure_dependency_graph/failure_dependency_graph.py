@@ -166,6 +166,7 @@ class FDG:
             )
         else:
             fdg = loaded_FDG
+        print(fdg)
         if return_real_path:
             return fdg, {'graph': graph_path, 'metrics': metrics_path, "faults": faults_path}
         else:
