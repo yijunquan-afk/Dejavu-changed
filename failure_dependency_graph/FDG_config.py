@@ -13,7 +13,7 @@ class FDGBaseConfig(Tap):
     early_stopping_epoch_patience: int = 250
     weight_decay: float = 1e-2
     init_lr: float = 1e-2
-    max_epoch: int = 3000
+    max_epoch: int = 300
     test_second_freq: float = 30.
     test_epoch_freq: int = 100
     valid_epoch_freq: int = 10

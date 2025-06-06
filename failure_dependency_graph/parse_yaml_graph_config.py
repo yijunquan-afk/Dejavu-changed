@@ -57,11 +57,13 @@ def parse_yaml_graph_config(path: Union[str, Path], output_dir: Optional[Path] =
             logger.error(f"{e!r} obj={pformat(obj)}")
 
     def add_edge(_src, _dst, _attrs):
+        
         if _src in g and _dst in g:  # ignore edges that don't exist
             g.add_edge(_src, _dst, **_attrs)
         else:
             logger.warning(f"ignoring edge {_src} -> {_dst}")
 
+    logger.info(g)
     # parse edges in the second pass
     for obj in input_data:
         try:
@@ -94,3 +96,6 @@ def parse_yaml_graph_config(path: Union[str, Path], output_dir: Optional[Path] =
     if not len(list(nx.weakly_connected_components(g))) <= 1:
         logger.warning(f"{path!s} is not a DAG: {list(nx.weakly_connected_components(g))=}")
     return g
+
+if __name__ == "__main__":
+    parse_yaml_graph_config("/home/user/yjq/Dejavu-changed/data/TrainTicket/graph.yml")

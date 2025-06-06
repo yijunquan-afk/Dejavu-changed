@@ -23,7 +23,7 @@ from failure_dependency_graph.incomplete_FDG_factory import IncompleteFDGFactory
 
 from utils.metric_augmentation import add_missing_to_tensor, add_spike_to_tensor
 from failure_dependency_graph import FDG
-from failure_dependency_graph.model_interface import split_failures_by_type, FDGModelInterface
+from failure_dependency_graph.model_interface import split_failures_by_json_file, split_failures_by_type, FDGModelInterface
 from metric_preprocess import MetricPreprocessor
 
 
@@ -182,7 +182,10 @@ def prepare_sklearn_dataset(
     del feature_extractor
     train_fault_ids, validation_fault_ids, test_fault_ids = split_failures_by_type(
         cdp.failures_df, fdg=cdp, split=config.dataset_split_ratio, train_set_sampling_ratio=config.train_set_sampling,
-    )
+    )    
+    # train_fault_ids, validation_fault_ids, test_fault_ids = split_failures_by_json_file(
+    #     cdp.failures_df, fdg=cdp, split=config.dataset_split_ratio, train_set_sampling_ratio=config.train_set_sampling,
+    # )
     train_fault_ids = set(train_fault_ids)
     validation_fault_ids = set(validation_fault_ids)
     # test_fault_ids = set(test_fault_ids)

@@ -1,0 +1,816 @@
+{
+    "train": [
+        {
+            "timestamp": 1730529180,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730571420,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730586060,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730606460,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730610120,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730617380,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730554680,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730536440,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730558340,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730575080,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730478300,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730453400,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730621040,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730602800,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730543760,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730564160,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730578740,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730467980,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730474640,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730465040,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730475360,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730590380,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730618100,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730572200,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730468700,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730461380,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730548140,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730485680,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730540820,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730575800,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730610840,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730562000,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730579460,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730551740,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730544480,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730454120,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730599920,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730621760,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730583120,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730568540,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730479020,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730607900,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730476080,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730569260,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730597700,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730458500,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730594760,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730534280,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730465760,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730556120,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730469420,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730562720,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730629800,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730548860,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730530620,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730618820,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730486400,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730572920,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730580180,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730541540,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730604240,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730632680,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730479740,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730538660,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730566320,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730531340,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730542260,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730569980,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730476800,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730612280,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730549580,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730608620,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730588220,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730573640,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730605020,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730577300,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730623200,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730560500,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730591880,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730462880,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730466480,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730601360,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730532060,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730605740,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730598420,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730467260,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730567100,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730456280,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730592600,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730557620,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730553960,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730602080,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730481180,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730585280,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730563440,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730539380,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730570700,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730535720,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730546640,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730561220,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730613000,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730623920,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730487900,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730588940,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "memory_stress"
+        }
+    ],
+    "test": [
+        {
+            "timestamp": 1730589660,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730624640,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730547420,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730457060,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730628300,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730532780,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730551020,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730593320,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730460660,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730567820,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730464320,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "cpu_contention"
+        },
+        {
+            "timestamp": 1730631960,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730586780,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730625420,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730594040,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730555400,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730629020,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730607180,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730596980,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730564880,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730457780,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730529900,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730533560,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "network_delay"
+        },
+        {
+            "timestamp": 1730565600,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730545200,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730552520,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730583840,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730462160,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730600640,
+            "cmdb_id": "ts-order-service-86b84f56b5-kcmcd",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730591160,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730622480,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730576580,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730537940,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730559780,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730611560,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "io_contention"
+        },
+        {
+            "timestamp": 1730584560,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730545920,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730535000,
+            "cmdb_id": "ts-station-service-588d557995-4qk9q",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730626860,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730480460,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730556840,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730470140,
+            "cmdb_id": "ts-travel2-service-749b4bf999-qhltz",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730455560,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730459220,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730619540,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730595540,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "network_loss"
+        },
+        {
+            "timestamp": 1730620320,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730631240,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730550300,
+            "cmdb_id": "ts-travel-service-d9d887cd9-cplqf",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730477580,
+            "cmdb_id": "ts-food-map-service-66c85b59b-brmrf",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730633400,
+            "cmdb_id": "ts-preserve-service-56576b74bf-r682r",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730574360,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730459940,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730581680,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730596260,
+            "cmdb_id": "ts-route-service-5dd59946b-c4qxz",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730578020,
+            "cmdb_id": "ts-basic-service-5958769c99-mj82d",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730463600,
+            "cmdb_id": "ts-payment-service-6df559d8fd-4wzhd",
+            "inject_type": "memory_stress"
+        },
+        {
+            "timestamp": 1730609340,
+            "cmdb_id": "ts-contacts-service-6b9f8dcd78-m68rp",
+            "inject_type": "memory_stress"
+        }
+    ]
+}

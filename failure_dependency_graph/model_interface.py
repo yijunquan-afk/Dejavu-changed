@@ -1,7 +1,8 @@
 from collections import defaultdict
 from functools import cached_property, reduce
+import json
 from typing import List, Optional, Tuple, TypeVar, Generic, Any, Union
-
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import pytorch_lightning as pl
@@ -194,75 +195,127 @@ def split_failures_by_type(
         fault_df: pd.DataFrame, *, fdg: FDG = None, split: Tuple[float, float, float] = (0.3, 0.2, 0.5),
         train_set_sampling_ratio: float = 1.0, balance_train_set: bool = False
 ) -> Tuple[List[int], List[int], List[int]]:
-    rng = np.random.default_rng(233)  # the random seed should be fixed
-    fault_type_2_id_list = defaultdict(list)
-    id_2_root_cause_node = {}
+    with open(Path("./data/TrainTicket/trainticket_split.json"), "r") as f:
+        split_json = json.load(f)
+    train_timestamp = [f['timestamp'] for f in split_json['train']]
+    test_timestamp = [f['timestamp'] for f in split_json['test']]
+    train_list, validation_list, test_list = [], [], []
     for idx, (_, fault) in enumerate(fault_df.iterrows()):
-        # kpis = fault['kpi'] if not pd.isnull(fault['kpi']) else ""
-        # 考虑根因KPI来对故障分类的话，有很多类别的故障数量太少（只有一两个）
-        if fdg is not None:
-            fault_type = tuple(fdg.instance_to_class(_) for _ in fault['root_cause_node'].split(";"))
-        else:
-            fault_type = tuple(fault['node_type'].split(";"))
-        fault_type_2_id_list[fault_type].append(idx)
-        id_2_root_cause_node[idx] = set(fault['root_cause_node'].split(";"))
-    logger.info(
-        f"fault ids with multiple root causes: "
-        f"{[(k, len(v)) for k, v in id_2_root_cause_node.items() if len(v) > 1]}"
+        t = fault['timestamp']
+        flag = True
+        for temp1 in train_timestamp:
+            if t > temp1-120 and t < temp1 + 120:
+                train_list.append(idx)
+                flag = False
+                break
+        for temp1 in test_timestamp:
+            if t > temp1-120 and t < temp1 + 120:
+                test_list.append(idx)
+                flag = False
+                break
+        if flag:
+            validation_list.append(idx)
+        
+    print(
+    f"{len(train_list)=} "
+    f"{len(set(train_list))=} "
+    f"{len(validation_list)=} "
+    f"{len(test_list)=} "
     )
-    train_ids_list: List[List[int]] = []
-    validation_list: List[int] = []
-    test_list: List[int] = []
-    for fault_type, ids in fault_type_2_id_list.items():
-        _train_split = max(int(len(ids) * split[0]), 1)
-        _valid_split = max(int(len(ids) * (split[0] + split[1])), 1)
-        rng.shuffle(ids)
+    return train_list, validation_list, test_list
+    # rng = np.random.default_rng(233)  # the random seed should be fixed
+    # fault_type_2_id_list = defaultdict(list)
+    # id_2_root_cause_node = {}
+    # for idx, (_, fault) in enumerate(fault_df.iterrows()):
+    #     # kpis = fault['kpi'] if not pd.isnull(fault['kpi']) else ""
+    #     # 考虑根因KPI来对故障分类的话，有很多类别的故障数量太少（只有一两个）
+    #     if fdg is not None:
+    #         fault_type = tuple(fdg.instance_to_class(_) for _ in fault['root_cause_node'].split(";"))
+    #     else:
+    #         fault_type = tuple(fault['node_type'].split(";"))
+    #     fault_type_2_id_list[fault_type].append(idx)
+    #     id_2_root_cause_node[idx] = set(fault['root_cause_node'].split(";"))
+    # logger.info(
+    #     f"fault ids with multiple root causes: "
+    #     f"{[(k, len(v)) for k, v in id_2_root_cause_node.items() if len(v) > 1]}"
+    # )
+    # train_ids_list: List[List[int]] = []
+    # validation_list: List[int] = []
+    # test_list: List[int] = []
+    # for fault_type, ids in fault_type_2_id_list.items():
+    #     _train_split = max(int(len(ids) * split[0]), 1)
+    #     _valid_split = max(int(len(ids) * (split[0] + split[1])), 1)
+    #     rng.shuffle(ids)
 
-        train_ids = ids[0:_train_split]
-        train_ids_list.append(train_ids)
+    #     train_ids = ids[0:_train_split]
+    #     train_ids_list.append(train_ids)
 
-        validation_ids = ids[_train_split:_valid_split]
-        validation_list.extend(validation_ids)
+    #     validation_ids = ids[_train_split:_valid_split]
+    #     validation_list.extend(validation_ids)
 
-        test_ids = ids[_valid_split:]
-        test_list.extend(test_ids)
+    #     test_ids = ids[_valid_split:]
+    #     test_list.extend(test_ids)
 
-        del _train_split, _valid_split
+    #     del _train_split, _valid_split
 
-        train_rc_nodes = reduce(lambda a, b: a | b, [id_2_root_cause_node[_] for _ in train_ids], set())
-        test_rc_nodes = list(id_2_root_cause_node[_] for _ in test_ids)
+    #     train_rc_nodes = reduce(lambda a, b: a | b, [id_2_root_cause_node[_] for _ in train_ids], set())
+    #     test_rc_nodes = list(id_2_root_cause_node[_] for _ in test_ids)
+    #     logger.info(
+    #         f"{fault_type=!s:30} \n"
+    #         f"train_length={len(train_ids):<5.0f} {train_ids=} \n"
+    #         f"validation_length={len(validation_ids):<5.0f} {validation_ids=} \n"
+    #         f"test_length={len(test_ids):<5.0f} {test_ids=} \n"
+    #         f"({len(list(filter(lambda _: _ <= train_rc_nodes, test_rc_nodes))):<3.0f} recurring faults)")
+    #     del train_ids, validation_ids, test_ids
+
+    # if balance_train_set:
+    #     balanced_train_ids_list = []
+    #     max_length = max([len(_) for _ in train_ids_list])
+    #     for train_ids in train_ids_list:
+    #         oversampling_ratio = max_length // len(train_ids)
+    #         logger.info(f"repeat {train_ids} for {oversampling_ratio} times")
+    #         balanced_train_ids_list.append(train_ids * oversampling_ratio)
+    #     train_ids_list = balanced_train_ids_list
+    #     del oversampling_ratio, max_length, train_ids, balanced_train_ids_list
+
+    # train_list = sum(train_ids_list, [])
+    # del train_ids_list
+
+    # sampled_train_list = []
+    # for i in train_list:
+    #     if rng.random() <= train_set_sampling_ratio:
+    #         sampled_train_list.append(i)
+    # # 除非train_set_sampling_ratio写成0，否则至少放一个训练数据
+    # if len(sampled_train_list) == 0 and train_set_sampling_ratio > 0:
+    #     sampled_train_list.append(train_list[-1])
+    # train_list = sampled_train_list
+    # del sampled_train_list
+
+    # logger.info(
+    #     f"{len(train_list)=} "
+    #     f"{len(set(train_list))=} "
+    #     f"{len(validation_list)=} "
+    #     f"{len(test_list)=} "
+    # )
+    # return train_list, validation_list, test_list
+
+def split_failures_by_json_file(fault_df: pd.DataFrame, *, fdg: FDG = None, split: Tuple[float, float, float] = (0.3, 0.2, 0.5),
+        train_set_sampling_ratio: float = 1.0, balance_train_set: bool = False):
+    with open("Dejavu-changed/data/TrainTicket/trainticket_split.json", "r") as f:
+        split_json = json.load(f)
+    train_timestamp = [f['timestamp'] for f in split_json['train']]
+    test_timestamp = [f['timestamp'] for f in split_json['test']]
+    train_list, validation_list, test_list = [], [], []
+    for idx, (_, fault) in enumerate(fault_df.iterrows()):
+        t = fault['timestamp']
+        if t in train_timestamp:
+            train_list.append(idx)
+        elif t in test_timestamp:
+            test_list.append(idx)
+        else:
+            validation_list.append(idx)
+        
         logger.info(
-            f"{fault_type=!s:30} \n"
-            f"train_length={len(train_ids):<5.0f} {train_ids=} \n"
-            f"validation_length={len(validation_ids):<5.0f} {validation_ids=} \n"
-            f"test_length={len(test_ids):<5.0f} {test_ids=} \n"
-            f"({len(list(filter(lambda _: _ <= train_rc_nodes, test_rc_nodes))):<3.0f} recurring faults)")
-        del train_ids, validation_ids, test_ids
-
-    if balance_train_set:
-        balanced_train_ids_list = []
-        max_length = max([len(_) for _ in train_ids_list])
-        for train_ids in train_ids_list:
-            oversampling_ratio = max_length // len(train_ids)
-            logger.info(f"repeat {train_ids} for {oversampling_ratio} times")
-            balanced_train_ids_list.append(train_ids * oversampling_ratio)
-        train_ids_list = balanced_train_ids_list
-        del oversampling_ratio, max_length, train_ids, balanced_train_ids_list
-
-    train_list = sum(train_ids_list, [])
-    del train_ids_list
-
-    sampled_train_list = []
-    for i in train_list:
-        if rng.random() <= train_set_sampling_ratio:
-            sampled_train_list.append(i)
-    # 除非train_set_sampling_ratio写成0，否则至少放一个训练数据
-    if len(sampled_train_list) == 0 and train_set_sampling_ratio > 0:
-        sampled_train_list.append(train_list[-1])
-    train_list = sampled_train_list
-    del sampled_train_list
-
-    logger.info(
         f"{len(train_list)=} "
         f"{len(set(train_list))=} "
         f"{len(validation_list)=} "
