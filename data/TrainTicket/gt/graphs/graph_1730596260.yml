@@ -3,7 +3,6 @@
   - ts-assurance-service-6b5bcd8f6f-rf74r
   - ts-auth-service-77697bb85d-5pgl6
   - ts-basic-service-5958769c99-mj82d
-  - ts-cancel-service-7d7f7d6f67-6d258
   - ts-config-service-6fb9dbc99f-w87b9
   - ts-consign-price-service-6d789444bd-4wghx
   - ts-consign-service-7595657f78-9gtzw
@@ -30,7 +29,6 @@
   - ts-assurance-service
   - ts-auth-service
   - ts-basic-service
-  - ts-cancel-service
   - ts-config-service
   - ts-consign-price-service
   - ts-consign-service
@@ -83,8 +81,6 @@
     - ts-route-service
     - ts-station-service
     - ts-train-service
-    - ts-order-other-service
-    - ts-order-service
     - ts-consign-price-service
     - ts-food-map-service
     - ts-station-service
@@ -136,8 +132,6 @@
     - ts-basic-service
     - ts-basic-service
     - ts-basic-service
-    - ts-cancel-service
-    - ts-cancel-service
     - ts-consign-service
     - ts-food-service
     - ts-food-service
@@ -193,7 +187,6 @@
     - ts-assurance-service-6b5bcd8f6f-rf74r
     - ts-auth-service-77697bb85d-5pgl6
     - ts-basic-service-5958769c99-mj82d
-    - ts-cancel-service-7d7f7d6f67-6d258
     - ts-config-service-6fb9dbc99f-w87b9
     - ts-consign-price-service-6d789444bd-4wghx
     - ts-consign-service-7595657f78-9gtzw
@@ -220,7 +213,6 @@
     - ts-assurance-service
     - ts-auth-service
     - ts-basic-service
-    - ts-cancel-service
     - ts-config-service
     - ts-consign-price-service
     - ts-consign-service
