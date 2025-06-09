@@ -1,0 +1,201 @@
+nohup: ignoring input
+Using backend: pytorch
+2025-06-09 06:24:41.376 | INFO     | failure_dependency_graph.FDG_config:process_args:62 - torch.cuda.is_available()=False
+2025-06-09 06:24:41.457 | INFO     | DejaVu.workflow:_train_exp_CFL:34 - 
+================================================Config=============================================
+{'FI_feature_dim': 3,
+ 'GAT_layers': 3,
+ 'GAT_num_heads': 3,
+ 'GAT_residual': True,
+ 'GAT_shared_feature_mapper': False,
+ 'augmentation': True,
+ 'balance_train_set': True,
+ 'batch_size': 16,
+ 'cache_dir': PosixPath('/tmp/SSF/.cache'),
+ 'checkpoint_metric': 'val_loss',
+ 'cuda': False,
+ 'data_dir': PosixPath('data/aiops2022/gt'),
+ 'dataset_split_ratio': (0.4, 0.2, 0.4),
+ 'display_epoch_freq': 10,
+ 'display_second_freq': 5,
+ 'drop_FDG_edges_fraction': 0.0,
+ 'dropout': False,
+ 'early_stopping_epoch_patience': 500,
+ 'es': True,
+ 'faults_path': None,
+ 'feature_projector_type': 'GRU',
+ 'flush_dataset_cache': True,
+ 'gradient_clip_val': 1.0,
+ 'graph_config_path': None,
+ 'init_lr': 0.01,
+ 'max_epoch': 300,
+ 'metrics_path': None,
+ 'output_base_path': PosixPath('/SSF/output'),
+ 'output_dir': PosixPath('/SSF/output/run_GAT_node_classification.py.2025-06-09T06:24:41.376213'),
+ 'p': 0.25,
+ 'q': 0.25,
+ 'random_walk_length': 8,
+ 'rec_loss_weight': 1.0,
+ 'test_batch_size': 128,
+ 'test_epoch_freq': 100,
+ 'test_second_freq': 30.0,
+ 'train_set_repeat': 1,
+ 'train_set_sampling': 1.0,
+ 'ts_feature_mode': 'full',
+ 'use_anomaly_direction_constraint': False,
+ 'valid_epoch_freq': 10,
+ 'weight_decay': 0.01,
+ 'window_size': (10, 10)}
+===================================================================================================
+
+2025-06-09 06:24:41.584 | INFO     | DejaVu.workflow:_train_exp_CFL:39 - reproducibility info: {'command_line': 'python run_GAT_node_classification.py -H=3 -L=3 -fe=GRU -aug=True -bal=True --data_dir=./data/aiops2022/gt', 'time': 'Mon Jun  9 06:24:41 2025', 'git_root': '/workspace', 'git_url': 'https://github.com/yijunquan-afk/Dejavu-changed/tree/cf6f2d39fc134297ff0804c50d98ce47afd5380b', 'git_has_uncommitted_changes': True}
+2025-06-09 06:24:42.014 | INFO     | failure_dependency_graph.failure_dependency_graph:_load_FDG:207 - Loading FDG from data/aiops2022/gt/FDG.pkl
+2025-06-09 06:24:42.563 | INFO     | failure_dependency_graph.model_interface:__init__:48 - dataset_cache_dir=/tmp/SSF/.cache/faults=data_aiops2022_gt_faults.csv.graph=None.metrics=data_aiops2022_gt_metrics.norm.pkl.use_anomaly_direction_constraint=False
+2025-06-09 06:24:42.583 | INFO     | failure_dependency_graph.model_interface:split_failures_by_type:220 - Dataset splited result: 
+2025-06-09 06:24:42.584 | INFO     | failure_dependency_graph.model_interface:split_failures_by_type:221 - len(train_list)=116 len(set(train_list))=116 len(validation_list)=1 len(test_list)=67 
+2025-06-09 06:24:42.595 | INFO     | DejaVu.workflow:_train_exp_CFL:51 - 
+==========================Model Summary================================================================================================================
+Layer (type:depth-idx)                   Param #
+=================================================================
+GAT                                      --
+├─FIFeatureExtractor: 1-1                --
+│    └─ModuleList: 2-1                   --
+│    │    └─GRUFeatureModule: 3-1        --
+│    │    │    └─GRU: 4-1                243
+│    │    │    └─Sequential: 4-2         --
+│    │    │    │    └─Reshape: 5-1       --
+│    │    │    │    └─Conv1d: 5-2        100
+│    │    │    │    └─GELU: 5-3          --
+│    │    │    │    └─Flatten: 5-4       --
+│    │    │    │    └─Linear: 5-5        543
+│    │    │    │    └─Reshape: 5-6       --
+│    │    └─GRUFeatureModule: 3-2        --
+│    │    │    └─GRU: 4-3                63
+│    │    │    └─Sequential: 4-4         --
+│    │    │    │    └─Reshape: 5-7       --
+│    │    │    │    └─Conv1d: 5-8        100
+│    │    │    │    └─GELU: 5-9          --
+│    │    │    │    └─Flatten: 5-10      --
+│    │    │    │    └─Linear: 5-11       543
+│    │    │    │    └─Reshape: 5-12      --
+├─Identity: 1-2                          --
+├─ModuleList: 1-3                        --
+│    └─GATConv: 2-2                      --
+│    │    └─Linear: 3-3                  27
+│    │    └─Dropout: 3-4                 --
+│    │    └─Dropout: 3-5                 --
+│    │    └─LeakyReLU: 3-6               --
+│    │    └─Linear: 3-7                  27
+│    └─GATConv: 2-3                      --
+│    │    └─Linear: 3-8                  81
+│    │    └─Dropout: 3-9                 --
+│    │    └─Dropout: 3-10                --
+│    │    └─LeakyReLU: 3-11              --
+│    │    └─Identity: 3-12               --
+│    └─GATConv: 2-4                      --
+│    │    └─Linear: 3-13                 81
+│    │    └─Dropout: 3-14                --
+│    │    └─Dropout: 3-15                --
+│    │    └─LeakyReLU: 3-16              --
+│    │    └─Identity: 3-17               --
+├─NodeWeightPredictor: 1-4               --
+│    └─Sequential: 2-5                   --
+│    │    └─Linear: 3-18                 1,280
+│    │    └─GELU: 3-19                   --
+│    │    └─Linear: 3-20                 128
+=================================================================
+Total params: 3,216
+Trainable params: 3,216
+Non-trainable params: 0
+=======================================================================================================================================================
+
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+<failure_dependency_graph.failure_dependency_graph.FDG object at 0x76f56cae38e0>
+preprocess metrics for each instance type:   0%|          | 0/2 [00:00<?, ?it/s]preprocess metrics for each instance type:  50%|█████     | 1/2 [00:05<00:05,  5.84s/it]preprocess metrics for each instance type: 100%|██████████| 2/2 [00:06<00:00,  2.55s/it]preprocess metrics for each instance type: 100%|██████████| 2/2 [00:06<00:00,  3.05s/it]
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Missing logger folder: /SSF/output/run_GAT_node_classification.py.2025-06-09T06:24:41.376213/lightning_logs
+
+  | Name    | Type | Params
+---------------------------------
+0 | _module | GAT  | 3.3 K 
+---------------------------------
+3.3 K     Trainable params
+0         Non-trainable params
+3.3 K     Total params
+0.013     Total estimated model params size (MB)
+2025-06-09 06:24:52.667 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=0     val_loss=1.1788     A@1=0.00 % A@2=0.00 % A@3=0.00 % A@5=0.00 % MAR=47.00 
+2025-06-09 06:25:08.516 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=0     loss=0.2577    A@1=6.90 % A@2=7.76 % A@3=10.34% A@5=21.55% MAR=20.96 
+2025-06-09 06:25:10.638 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=1     loss=0.4800    A@1=26.72% A@2=29.31% A@3=31.03% A@5=38.79% MAR=13.95 
+2025-06-09 06:25:16.662 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=4     loss=0.0954    A@1=29.31% A@2=33.62% A@3=35.34% A@5=42.24% MAR=12.55 
+2025-06-09 06:25:22.641 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=7     loss=0.3816    A@1=31.90% A@2=36.21% A@3=36.21% A@5=43.97% MAR=12.09 
+2025-06-09 06:25:26.999 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=9     val_loss=1.0783     A@1=0.00 % A@2=0.00 % A@3=0.00 % A@5=0.00 % MAR=13.00 
+2025-06-09 06:25:27.011 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:133 - 
+=======================Start Test at Epoch 9 ======================
+2025-06-09 06:25:27.012 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:136 - load model from 
+2025-06-09 06:25:27.013 | ERROR    | DejaVu.models.interface.callbacks:on_validation_epoch_end:145 - Encounter Exception during test: TypeError("test() got an unexpected keyword argument 'test_dataloaders'")
+Metric val_loss improved. New best score: 1.078
+2025-06-09 06:25:29.257 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=10    loss=0.5070    A@1=34.48% A@2=38.79% A@3=41.38% A@5=46.55% MAR=11.52 
+2025-06-09 06:25:35.824 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=13    loss=0.5331    A@1=36.21% A@2=37.07% A@3=37.93% A@5=43.97% MAR=11.72 
+2025-06-09 06:25:41.592 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=16    loss=0.1165    A@1=34.48% A@2=35.34% A@3=37.93% A@5=46.55% MAR=10.12 
+2025-06-09 06:25:47.317 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=19    val_loss=0.5517     A@1=0.00 % A@2=0.00 % A@3=100.00% A@5=100.00% MAR=3.00  
+Metric val_loss improved by 0.527 >= min_delta = 0.0. New best score: 0.552
+2025-06-09 06:25:47.367 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=19    loss=0.2889    A@1=34.48% A@2=37.93% A@3=37.93% A@5=45.69% MAR=10.97 
+2025-06-09 06:25:49.279 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=20    loss=0.2415    A@1=34.48% A@2=36.21% A@3=37.93% A@5=48.28% MAR=11.19 
+2025-06-09 06:25:55.022 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=23    loss=0.2741    A@1=34.48% A@2=38.79% A@3=42.24% A@5=50.00% MAR=10.63 
+2025-06-09 06:26:00.799 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=26    loss=0.3651    A@1=37.07% A@2=38.79% A@3=39.66% A@5=45.69% MAR=10.84 
+2025-06-09 06:26:06.570 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=29    val_loss=0.8436     A@1=0.00 % A@2=0.00 % A@3=0.00 % A@5=0.00 % MAR=13.00 
+2025-06-09 06:26:06.581 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:133 - 
+=======================Start Test at Epoch 29 ======================
+2025-06-09 06:26:06.582 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:136 - load model from /SSF/output/run_GAT_node_classification.py.2025-06-09T06:24:41.376213/lightning_logs/version_0/checkpoints/epoch=19-A@1=0.000000-val_loss=0.551736-MAR=3.000000.ckpt
+2025-06-09 06:26:06.582 | ERROR    | DejaVu.models.interface.callbacks:on_validation_epoch_end:145 - Encounter Exception during test: TypeError("test() got an unexpected keyword argument 'test_dataloaders'")
+2025-06-09 06:26:06.628 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=29    loss=0.3522    A@1=32.76% A@2=37.93% A@3=40.52% A@5=51.72% MAR=9.16  
+2025-06-09 06:26:08.530 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=30    loss=0.4076    A@1=32.76% A@2=35.34% A@3=38.79% A@5=49.14% MAR=9.67  
+2025-06-09 06:26:14.334 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=33    loss=0.2386    A@1=35.34% A@2=38.79% A@3=39.66% A@5=50.00% MAR=9.40  
+2025-06-09 06:26:20.396 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=36    loss=0.3580    A@1=33.62% A@2=36.21% A@3=39.66% A@5=43.97% MAR=10.39 
+2025-06-09 06:26:26.615 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=39    val_loss=0.4090     A@1=0.00 % A@2=0.00 % A@3=100.00% A@5=100.00% MAR=3.00  
+Metric val_loss improved by 0.143 >= min_delta = 0.0. New best score: 0.409
+2025-06-09 06:26:26.663 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=39    loss=0.3304    A@1=33.62% A@2=36.21% A@3=38.79% A@5=47.41% MAR=10.17 
+2025-06-09 06:26:28.799 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=40    loss=0.3905    A@1=36.21% A@2=36.21% A@3=37.93% A@5=47.41% MAR=11.08 
+2025-06-09 06:26:34.951 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=43    loss=0.2877    A@1=33.62% A@2=37.07% A@3=38.79% A@5=43.10% MAR=9.90  
+2025-06-09 06:26:40.916 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=46    loss=0.1733    A@1=34.48% A@2=37.07% A@3=40.52% A@5=44.83% MAR=10.45 
+2025-06-09 06:26:47.096 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=49    val_loss=0.5612     A@1=0.00 % A@2=0.00 % A@3=100.00% A@5=100.00% MAR=3.00  
+2025-06-09 06:26:47.108 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:133 - 
+=======================Start Test at Epoch 49 ======================
+2025-06-09 06:26:47.108 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:136 - load model from /SSF/output/run_GAT_node_classification.py.2025-06-09T06:24:41.376213/lightning_logs/version_0/checkpoints/epoch=39-A@1=0.000000-val_loss=0.409035-MAR=3.000000.ckpt
+2025-06-09 06:26:47.109 | ERROR    | DejaVu.models.interface.callbacks:on_validation_epoch_end:145 - Encounter Exception during test: TypeError("test() got an unexpected keyword argument 'test_dataloaders'")
+2025-06-09 06:26:47.155 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=49    loss=0.4784    A@1=35.34% A@2=36.21% A@3=37.07% A@5=43.97% MAR=10.34 
+2025-06-09 06:26:49.367 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=50    loss=0.2823    A@1=33.62% A@2=35.34% A@3=37.07% A@5=47.41% MAR=10.37 
+2025-06-09 06:26:55.853 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=53    loss=0.4785    A@1=34.48% A@2=37.07% A@3=39.66% A@5=50.00% MAR=10.28 
+2025-06-09 06:27:02.418 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=56    loss=0.4295    A@1=37.07% A@2=37.07% A@3=40.52% A@5=47.41% MAR=10.28 
+2025-06-09 06:27:08.900 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=59    val_loss=0.4464     A@1=0.00 % A@2=0.00 % A@3=100.00% A@5=100.00% MAR=3.00  
+2025-06-09 06:27:08.947 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=59    loss=0.6086    A@1=34.48% A@2=37.93% A@3=38.79% A@5=43.97% MAR=9.87  
+2025-06-09 06:27:11.073 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=60    loss=0.3942    A@1=34.48% A@2=38.79% A@3=40.52% A@5=47.41% MAR=10.10 
+2025-06-09 06:27:17.173 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=63    loss=0.1819    A@1=34.48% A@2=37.07% A@3=37.93% A@5=46.55% MAR=9.20  
+2025-06-09 06:27:23.149 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=66    loss=0.3328    A@1=33.62% A@2=38.79% A@3=41.38% A@5=47.41% MAR=9.16  
+2025-06-09 06:27:29.047 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=69    val_loss=0.6336     A@1=0.00 % A@2=0.00 % A@3=0.00 % A@5=0.00 % MAR=13.00 
+2025-06-09 06:27:29.059 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:133 - 
+=======================Start Test at Epoch 69 ======================
+2025-06-09 06:27:29.059 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:136 - load model from /SSF/output/run_GAT_node_classification.py.2025-06-09T06:24:41.376213/lightning_logs/version_0/checkpoints/epoch=39-A@1=0.000000-val_loss=0.409035-MAR=3.000000.ckpt
+2025-06-09 06:27:29.060 | ERROR    | DejaVu.models.interface.callbacks:on_validation_epoch_end:145 - Encounter Exception during test: TypeError("test() got an unexpected keyword argument 'test_dataloaders'")
+2025-06-09 06:27:29.165 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=69    loss=0.4365    A@1=35.34% A@2=37.07% A@3=37.93% A@5=48.28% MAR=9.02  
+2025-06-09 06:27:31.145 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=70    loss=0.1441    A@1=34.48% A@2=38.79% A@3=39.66% A@5=46.55% MAR=9.42  
+2025-06-09 06:27:37.005 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=73    loss=0.1820    A@1=35.34% A@2=38.79% A@3=42.24% A@5=50.00% MAR=9.29  
+2025-06-09 06:27:42.717 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=76    loss=0.3618    A@1=37.07% A@2=39.66% A@3=42.24% A@5=52.59% MAR=9.62  
+2025-06-09 06:27:48.415 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=79    val_loss=0.7687     A@1=0.00 % A@2=0.00 % A@3=0.00 % A@5=0.00 % MAR=13.00 
+2025-06-09 06:27:48.448 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=79    loss=0.2326    A@1=31.90% A@2=36.21% A@3=37.93% A@5=51.72% MAR=9.29  
+2025-06-09 06:27:50.334 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=80    loss=0.0348    A@1=35.34% A@2=38.79% A@3=43.10% A@5=54.31% MAR=8.95  
+2025-06-09 06:27:56.143 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=83    loss=0.3756    A@1=34.48% A@2=37.93% A@3=40.52% A@5=48.28% MAR=10.39 
+2025-06-09 06:28:01.936 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=86    loss=0.2781    A@1=33.62% A@2=37.93% A@3=42.24% A@5=48.28% MAR=9.84  
+2025-06-09 06:28:07.679 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:52 - epoch=89    val_loss=0.4336     A@1=0.00 % A@2=0.00 % A@3=100.00% A@5=100.00% MAR=3.00  
+2025-06-09 06:28:07.691 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:133 - 
+=======================Start Test at Epoch 89 ======================
+2025-06-09 06:28:07.691 | INFO     | DejaVu.models.interface.callbacks:on_validation_epoch_end:136 - load model from /SSF/output/run_GAT_node_classification.py.2025-06-09T06:24:41.376213/lightning_logs/version_0/checkpoints/epoch=39-A@1=0.000000-val_loss=0.409035-MAR=3.000000.ckpt
+2025-06-09 06:28:07.692 | ERROR    | DejaVu.models.interface.callbacks:on_validation_epoch_end:145 - Encounter Exception during test: TypeError("test() got an unexpected keyword argument 'test_dataloaders'")
+2025-06-09 06:28:07.739 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=89    loss=0.1971    A@1=33.62% A@2=36.21% A@3=38.79% A@5=47.41% MAR=9.14  
+2025-06-09 06:28:09.673 | INFO     | DejaVu.models.interface.callbacks:on_train_epoch_end:41 - epoch=90    loss=0.2413    A@1=31.03% A@2=37.93% A@3=39.66% A@5=48.28% MAR=9.64  

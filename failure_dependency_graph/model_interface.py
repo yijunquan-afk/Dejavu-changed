@@ -195,7 +195,9 @@ def split_failures_by_type(
         fault_df: pd.DataFrame, *, fdg: FDG = None, split: Tuple[float, float, float] = (0.3, 0.2, 0.5),
         train_set_sampling_ratio: float = 1.0, balance_train_set: bool = False
 ) -> Tuple[List[int], List[int], List[int]]:
-    with open(Path("./data/TrainTicket/trainticket_split.json"), "r") as f:
+    # with open(Path("./data/TrainTicket/trainticket_split.json"), "r") as f:
+    #     split_json = json.load(f)
+    with open(Path("./data/aiops2022/aiops_split.json"), "r") as f:
         split_json = json.load(f)
     train_timestamp = [f['timestamp'] for f in split_json['train']]
     test_timestamp = [f['timestamp'] for f in split_json['test']]
@@ -215,8 +217,8 @@ def split_failures_by_type(
                 break
         if flag:
             validation_list.append(idx)
-        
-    print(
+    logger.info("Dataset splited result: ")    
+    logger.info(
     f"{len(train_list)=} "
     f"{len(set(train_list))=} "
     f"{len(validation_list)=} "
@@ -303,6 +305,7 @@ def split_failures_by_json_file(fault_df: pd.DataFrame, *, fdg: FDG = None, spli
         train_set_sampling_ratio: float = 1.0, balance_train_set: bool = False):
     with open("Dejavu-changed/data/TrainTicket/trainticket_split.json", "r") as f:
         split_json = json.load(f)
+    
     train_timestamp = [f['timestamp'] for f in split_json['train']]
     test_timestamp = [f['timestamp'] for f in split_json['test']]
     train_list, validation_list, test_list = [], [], []

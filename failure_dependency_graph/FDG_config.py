@@ -10,7 +10,7 @@ class FDGBaseConfig(Tap):
     # Input
     gradient_clip_val: float = 1.
     es: bool = True
-    early_stopping_epoch_patience: int = 250
+    early_stopping_epoch_patience: int = 30
     weight_decay: float = 1e-2
     init_lr: float = 1e-2
     max_epoch: int = 300
@@ -41,11 +41,11 @@ class FDGBaseConfig(Tap):
     # FEATURE PROJECTION
     ################################################
     rec_loss_weight: float = 1.
-    FI_feature_dim: int = 3
+    FI_feature_dim: int = 12
     feature_projector_type: Literal['CNN', 'AE', 'GRU_AE', 'CNN_AE', 'GRU_VAE', 'GRU'] = 'CNN'
 
     window_size: Tuple[int, int] = (10, 10)
-    batch_size: int = 16
+    batch_size: int = 64
     test_batch_size: int = 128
 
     def process_args(self) -> None:
