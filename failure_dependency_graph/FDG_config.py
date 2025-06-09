@@ -10,10 +10,10 @@ class FDGBaseConfig(Tap):
     # Input
     gradient_clip_val: float = 1.
     es: bool = True
-    early_stopping_epoch_patience: int = 25
+    early_stopping_epoch_patience: int = 250
     weight_decay: float = 1e-2
     init_lr: float = 1e-2
-    max_epoch: int = 300
+    max_epoch: int = 10
     test_second_freq: float = 30.
     test_epoch_freq: int = 100
     valid_epoch_freq: int = 10

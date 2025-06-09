@@ -117,11 +117,18 @@ class DejaVuModelInterface(FDGModelInterface[DejaVuConfig, DejaVuDataset]):
         labels = th.concat([out["labels"] for out in outputs])
         label_list: List[Set[Any]] = [set(th.where(label >= 1)[0].tolist()) for label in labels]
         pred_list: List[List] = th.argsort(probs, dim=-1, descending=True).tolist()
+        a1 = top_1_accuracy(label_list, pred_list)
+        a2 = top_2_accuracy(label_list, pred_list)
+        a3 = top_3_accuracy(label_list, pred_list)
+        a4 = top_k_accuracy(label_list, pred_list, k=4)
+        a5 = top_k_accuracy(label_list, pred_list, k=5)
         metrics = {
-            "A@1": top_1_accuracy(label_list, pred_list),
-            "A@2": top_2_accuracy(label_list, pred_list),
-            "A@3": top_3_accuracy(label_list, pred_list),
-            "A@5": top_k_accuracy(label_list, pred_list, k=5),
+            "A@1": a1,
+            "A@2": a2,
+            "A@3": a3,
+            "A@4": a4,
+            "A@5": a5,
+            "AVG@5": (a1 + a2 + a3 + a4 + a5) / 5,
             "MAR": MAR(label_list, pred_list, max_rank=self.fdg.n_failure_instances),
         }
         self.log_dict(metrics)
@@ -143,11 +150,18 @@ class DejaVuModelInterface(FDGModelInterface[DejaVuConfig, DejaVuDataset]):
         labels = th.concat([out["labels"] for out in outputs])
         label_list: List[Set[Any]] = [set(th.where(label >= 1)[0].tolist()) for label in labels]
         pred_list: List[List] = th.argsort(probs, dim=-1, descending=True).tolist()
+        a1 = top_1_accuracy(label_list, pred_list)
+        a2 = top_2_accuracy(label_list, pred_list)
+        a3 = top_3_accuracy(label_list, pred_list)
+        a4 = top_k_accuracy(label_list, pred_list, k=4)
+        a5 = top_k_accuracy(label_list, pred_list, k=5)
         metrics = {
-            "A@1": top_1_accuracy(label_list, pred_list),
-            "A@2": top_2_accuracy(label_list, pred_list),
-            "A@3": top_3_accuracy(label_list, pred_list),
-            "A@5": top_k_accuracy(label_list, pred_list, k=5),
+            "A@1": a1,
+            "A@2": a2,
+            "A@3": a3,
+            "A@4": a4,
+            "A@5": a5,
+            "AVG@5": (a1 + a2 + a3 + a4 + a5) / 5,
             "MAR": MAR(label_list, pred_list, max_rank=self.fdg.n_failure_instances),
         }
         self.log_dict(metrics)
@@ -169,11 +183,18 @@ class DejaVuModelInterface(FDGModelInterface[DejaVuConfig, DejaVuDataset]):
         self.labels_list = label_list
         self.preds_list = pred_list
         self.probs_list = probs.tolist()
+        a1 = top_1_accuracy(label_list, pred_list)
+        a2 = top_2_accuracy(label_list, pred_list)
+        a3 = top_3_accuracy(label_list, pred_list)
+        a4 = top_k_accuracy(label_list, pred_list, k=4)
+        a5 = top_k_accuracy(label_list, pred_list, k=5)
         metrics = {
-            "A@1": top_1_accuracy(label_list, pred_list),
-            "A@2": top_2_accuracy(label_list, pred_list),
-            "A@3": top_3_accuracy(label_list, pred_list),
-            "A@5": top_k_accuracy(label_list, pred_list, k=5),
+            "A@1": a1,
+            "A@2": a2,
+            "A@3": a3,
+            "A@4": a4,
+            "A@5": a5,
+            "AVG@5": (a1 + a2 + a3 + a4 + a5) / 5,
             "MAR": MAR(label_list, pred_list, max_rank=self.fdg.n_failure_instances),
         }
         self.log_dict(metrics)

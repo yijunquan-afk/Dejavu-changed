@@ -44,7 +44,9 @@ class CFLLoggerCallback(pl.Callback):
             f"A@1={trainer.callback_metrics.get('A@1', -1) * 100:<5.2f}% "
             f"A@2={trainer.callback_metrics.get('A@2', -1) * 100:<5.2f}% "
             f"A@3={trainer.callback_metrics.get('A@3', -1) * 100:<5.2f}% "
+            f"A@4={trainer.callback_metrics.get('A@4', -1) * 100:<5.2f}% "
             f"A@5={trainer.callback_metrics.get('A@5', -1) * 100:<5.2f}% "
+            f"AVG@5={trainer.callback_metrics.get('AVG@5', -1) * 100:<5.2f}% "
             f"MAR={trainer.callback_metrics.get('MAR', -1):<5.2f} "
         )
 
@@ -55,7 +57,9 @@ class CFLLoggerCallback(pl.Callback):
             f"A@1={trainer.callback_metrics.get('A@1', -1) * 100:<5.2f}% "
             f"A@2={trainer.callback_metrics.get('A@2', -1) * 100:<5.2f}% "
             f"A@3={trainer.callback_metrics.get('A@3', -1) * 100:<5.2f}% "
+            f"A@4={trainer.callback_metrics.get('A@4', -1) * 100:<5.2f}% "
             f"A@5={trainer.callback_metrics.get('A@5', -1) * 100:<5.2f}% "
+            f"AVG@5={trainer.callback_metrics.get('AVG@5', -1) * 100:<5.2f}% "
             f"MAR={trainer.callback_metrics.get('MAR', -1):<5.2f} "
         )
 
@@ -63,11 +67,19 @@ class CFLLoggerCallback(pl.Callback):
         labels_list = pl_module.labels_list
         preds_list = pl_module.preds_list
         output = io.StringIO()
+        a1 = top_1_accuracy(labels_list, preds_list)
+        a2 = top_2_accuracy(labels_list, preds_list)
+        a3 = top_3_accuracy(labels_list, preds_list)
+        a4 = top_k_accuracy(labels_list, preds_list, k=4)
+        a5 = top_k_accuracy(labels_list, preds_list, k=5)
+        avg_5 = (a1 + a2 + a3 + a4 + a5) / 5
         print(
-            f"A@1={top_1_accuracy(labels_list, preds_list) * 100:<5.2f}% "
-            f"A@2={top_2_accuracy(labels_list, preds_list) * 100:<5.2f}% "
-            f"A@3={top_3_accuracy(labels_list, preds_list) * 100:<5.2f}% "
-            f"A@5={top_k_accuracy(labels_list, preds_list, k=5) * 100:<5.2f}% "
+            f"A@1={a1 * 100:<5.2f}% "
+            f"A@2={a2 * 100:<5.2f}% "
+            f"A@3={a3 * 100:<5.2f}% "
+            f"A@4={a4 * 100:<5.2f}% "
+            f"A@5={a5 * 100:<5.2f}% "
+            f"AVG@5={avg_5 * 100:<5.2f}% "
             f"MAR={MAR(labels_list, preds_list, max_rank=pl_module.fdg.n_failure_instances):<5.2f} ",
             file=output
         )
