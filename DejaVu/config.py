@@ -21,7 +21,7 @@ class DejaVuConfig(FDGBaseConfig):
     drop_FDG_edges_fraction: float = 0.
 
     # model parameters
-    dropout: bool = False
+    dropout: bool = True
     augmentation: bool = False
 
     ################################################

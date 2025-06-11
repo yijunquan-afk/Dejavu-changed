@@ -96,7 +96,7 @@ class CFLLoggerCallback(pl.Callback):
 
         print(
             f"|{'id':4}|{'':<5}|{'FR':<3}|{'AR':<3}|{'recurring':<9}|{'timestamp':<25}|"
-            f"{'root cause':<70}|{'rank-1':<20}|{'rank-2':<20}|{'rank-3':<20}|",
+            f"{'root cause':<50}|{'rank-1':<20}|{'rank-2':<20}|{'rank-3':<20}|{'rank-4':<20}|{'rank-5':<20}|",
             file=output
         )
         for preds, fault_id, labels in zip(preds_list, pl_module.test_failure_ids, labels_list):
@@ -110,10 +110,12 @@ class CFLLoggerCallback(pl.Callback):
                 f"{sum(ranks) / len(ranks):3.0f}|"
                 f"{is_recurring!s:<9}|"
                 f"{datetime.fromtimestamp(cdp.failure_at(fault_id)['timestamp']).astimezone(tz).isoformat():<25}|"
-                f"{','.join([cdp.gid_to_instance(_) for _ in labels]):<70}|"
+                f"{','.join([cdp.gid_to_instance(_) for _ in labels]):<50}|"
                 f"{cdp.gid_to_instance(preds[0]):<20}|"
                 f"{cdp.gid_to_instance(preds[1]):<20}|"
                 f"{cdp.gid_to_instance(preds[2]):<20}|",
+                f"{cdp.gid_to_instance(preds[3]):<20}|",
+                f"{cdp.gid_to_instance(preds[4]):<20}|",
                 file=output
             )
         self.print(f"\n{output.getvalue()}")

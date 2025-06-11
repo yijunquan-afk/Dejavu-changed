@@ -10,15 +10,15 @@ class FDGBaseConfig(Tap):
     # Input
     gradient_clip_val: float = 1.
     es: bool = True
-    early_stopping_epoch_patience: int = 250
+    early_stopping_epoch_patience: int = 500
     weight_decay: float = 1e-2
     init_lr: float = 1e-2
-    max_epoch: int = 10
+    max_epoch: int = 1000
     test_second_freq: float = 30.
     test_epoch_freq: int = 100
     valid_epoch_freq: int = 10
-    display_second_freq: float = 5
-    display_epoch_freq: int = 10
+    display_second_freq: float = 1
+    display_epoch_freq: int = 1
     graph_config_path: Optional[Path] = None
     metrics_path: Optional[Path] = None
     faults_path: Optional[Path] = None
@@ -41,10 +41,10 @@ class FDGBaseConfig(Tap):
     # FEATURE PROJECTION
     ################################################
     rec_loss_weight: float = 1.
-    FI_feature_dim: int = 3
+    FI_feature_dim: int = 8
     feature_projector_type: Literal['CNN', 'AE', 'GRU_AE', 'CNN_AE', 'GRU_VAE', 'GRU'] = 'CNN'
 
-    window_size: Tuple[int, int] = (10, 10)
+    window_size: Tuple[int, int] = (8, 8)
     batch_size: int = 16
     test_batch_size: int = 128
 
